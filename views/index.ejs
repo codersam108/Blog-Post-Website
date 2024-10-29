@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Blog Post Website</title>
+</head>
+<body>
+    <%- include("Partials/header.ejs") %>
+    <div class="container">
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="images/heroe-image.webp" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="900" height="500" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Post Your Blogs with ease</h1>
+            <p class="lead">Welcome to Blog Post, your go-to platform for insightful content across technology, lifestyle, and everything in between! Whether you're here to learn something new, stay updated on the latest trends, or find inspiration for your next big project, we've got you covered. Our dedicated team of writers brings you fresh and engaging articles on a wide range of topics, from web development and tech innovations to productivity hacks and personal growth tips. Explore, engage, and enjoy as we dive deep into the topics that matter to you most!</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="corousel conti">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="container">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="images/blog_coroursel-1.webp" class="d-block w-100" alt="..." width="100" height="500">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Exciting Blogs</h5>
+                  <p>Discover Exciting Blogs.</p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="images/blog_corousel-2.jpg" class="d-block w-100" alt="..." width="100" height="500">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Security</h5>
+                  <p>Your Blogs are secured in our website with end to end enscription.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="images/blog_corousel-2.webp" class="d-block w-100" alt="..." width="100" height="500">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Open to Edit</h5>
+                  <p>Blogs posted are open to edit therefore streamlining the process</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          </div>
+      </div>
+      <%- include("Partials/footer.ejs") %>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

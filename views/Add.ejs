@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add or Delete Post</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery must come first -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <!-- Toastr JS should come after jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <style>
+      #toast-container > div {
+          color: black !important; /* Force text color to black */
+          background-color: white !important; /* Force background to white */
+          opacity: 0.5 !important; /* Make sure it's fully visible */
+          
+      }
+      /* Style for success messages */
+      .toast-success {
+          border-left: 2px solid #28a745 !important;
+      }
+      /* Style for error messages */
+      .toast-error {
+          border-left: 2px solid #dc3545 !important;
+      }
+  </style>
+    <% if (typeof m !== 'undefined' && m) { %>
+        <meta name="message" content="<%= m %>">
+    <% } %>
+</head>
+<body>
+    <%- include("Partials/header.ejs") %>
+    
+    <div class="container mt-4">
+        <form action="/submit" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" class="form-control" id="title" placeholder="Enter title">
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <textarea name="content" class="form-control" id="content" rows="5" placeholder="Enter content"></textarea>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Create Post">
+        </form>
+    </div>
+
+    <%- include("Partials/footer.ejs") %>
+
+    <!-- Your custom script comes last -->
+    <script>
+      toastr.options = {
+            closeButton: true,
+            progressBar: true,
+            positionClass: "toast-top-center",
+            timeOut: 5000  // 3 seconds
+        };
+        // Check if there's a message to display
+        const message = document.querySelector("meta[name='message']");
+        if (message) {
+            const msgContent = message.getAttribute("content");
+            if (msgContent.includes("error")) {
+                toastr.error(msgContent);  // Show error message
+            } else {
+                toastr.success(msgContent);  // Show success message
+            }
+        }
+    </script>
+</body>
+</html>
